@@ -12,7 +12,7 @@ import {
 const Charts = (props) => {
   const { state, setState } = props;
   const [chartData, setChartData] = React.useState([]);
-  const isExpandedView = false;
+  const [isExpandedView, setIsExpandedView] = React.useState(false);
   const getChartData = () => {
     const stockApiKey = "OMZGXK5NKES2KJV5";
     const webUrl = `https://www.alphavantage.co/query?function=FX_DAILY&from_symbol=${state.baseCurrency}&to_symbol=${state.conversionCurrency}&apikey=${stockApiKey}`;
@@ -38,7 +38,7 @@ const Charts = (props) => {
   console.log(chartData);
   const handleBack = (event) => {
     event.preventDefault();
-    setState({ ...state, isChartPage: false });
+    setState({ ...state, isChartPage: false, isExpandedView: false });
   };
 
   const oneMonthChart = chartData
@@ -52,6 +52,10 @@ const Charts = (props) => {
   console.log(threeMonthChart);
   const dataMessageOne = <p>Data Represents a 30 Day Period</p>;
   const dataMessageTwo = <p>Data Represents a 90 Day Period</p>;
+  const handleExpandedView = (event) => {
+    setIsExpandedView(!isExpandedView);
+  };
+
   return (
     <div className="chart">
       <div id="chart-container">
@@ -59,16 +63,16 @@ const Charts = (props) => {
           Chart Data for - {state.baseCurrency}|{state.conversionCurrency}
         </h3>
         <div>
-          {!chartData.length ? (
-            <p>missing data..</p>
+          {isExpandedView ? (
+            <MyThreeMonthChart data={threeMonthChart} />
           ) : (
             <MyChart data={oneMonthChart} />
           )}
-          ;
         </div>
         {isExpandedView ? dataMessageTwo : dataMessageOne}
 
         <button onClick={handleBack}>Back to Converter</button>
+        <button onClick={handleExpandedView}>Expanded Chart</button>
       </div>
     </div>
   );
