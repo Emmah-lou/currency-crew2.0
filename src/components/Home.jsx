@@ -1,12 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { CurrencyExchange } from "./CurrencyExchange";
 import { Converter } from "./Converter";
-//import Header from "./Header";
-//import Footer from "./Footer";
-//import Home_BaseRate from "./Home_BaseRate";
-//import Home_BaseRateList from "./Home_BaseRateList";
 import "./Home.scss";
 
 export default function Home(props) {

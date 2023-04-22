@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+
 const CurrencyExchangeSelector = (props) => {
   const { state, setState } = props;
   const handleCurrencyChange = (event) => {
@@ -52,23 +53,6 @@ const CurrencyExchangeSelector = (props) => {
   );
 };
 
-const ExchangeItem = (props) => {
-  const { state, setState, currency, rate } = props;
-  const handleChange = (event) => {
-    event.preventDefault();
-    //console.log(event.target.value);
-    setState({ ...state, conversionCurrency: currency, isConverterPage: true });
-  };
-  return (
-    <li key={`${currency}`}>
-      <button onClick={handleChange}>
-        {state.baseCurrency} - {currency}
-      </button>
-      <span> - {rate}</span>
-    </li>
-  );
-};
-
 const ExchangeList = (props) => {
   const { state, setState } = props;
   const fetchBaseRateList = async () => {
@@ -101,6 +85,22 @@ const ExchangeList = (props) => {
         })}
       </ul>
     </div>
+  );
+};
+
+const ExchangeItem = (props) => {
+  const { state, setState, currency, rate } = props;
+  const handleChange = (event) => {
+    event.preventDefault();
+    setState({ ...state, conversionCurrency: currency, isConverterPage: true });
+  };
+  return (
+    <li key={`${currency}`}>
+      <button onClick={handleChange}>
+        {state.baseCurrency} - {currency}
+      </button>
+      <span> - {rate}</span>
+    </li>
   );
 };
 
