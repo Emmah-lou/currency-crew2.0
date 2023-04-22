@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Charts } from "./Chart";
 
 const Converter = (props) => {
   const { state, setState } = props;
@@ -45,23 +46,30 @@ const Converter = (props) => {
   return (
     <div className="converter">
       <div id="converter-container">
-        <h1>
-          {state.baseCurrency} to {state.conversionCurrency}
-        </h1>
-        <form>
-          <button onClick={doTheSwap}>swap</button>
-          <label htmlFor="amount">Enter Amount </label>
-          <input
-            onChange={handleChange}
-            name="amount"
-            type="number"
-            value={state.amount}
-          />
-        </form>
-        <h1>{state.total}</h1>
-        <button onClick={handleBack}>Back</button>
-
-        <Link to={`/`}>View 30-Day Chart</Link>
+        {state.isChartPage ? (
+          <Charts state={state} setState={setState} />
+        ) : (
+          <div>
+            <h1>
+              {state.baseCurrency} to {state.conversionCurrency}
+            </h1>
+            <form>
+              <button onClick={doTheSwap}>swap</button>
+              <label htmlFor="amount">Enter Amount </label>
+              <input
+                onChange={handleChange}
+                name="amount"
+                type="number"
+                value={state.amount}
+              />
+            </form>
+            <h1>{state.total}</h1>
+            <button onClick={handleBack}>Back</button>
+            <button onClick={() => setState({ ...state, isChartPage: true })}>
+              Chart
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

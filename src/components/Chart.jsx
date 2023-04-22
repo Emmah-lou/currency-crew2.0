@@ -45,7 +45,6 @@ const Charts = (props) => {
 
   return (
     <div className="chart">
-      <Header />
       <div id="chart-container">
         <h3>
           Chart Data for - {state.baseCurrency}|{state.conversionCurrency}
@@ -55,7 +54,6 @@ const Charts = (props) => {
 
         <button>Back to Converter</button>
       </div>
-      <Footer />
     </div>
   );
 };
