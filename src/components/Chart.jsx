@@ -34,8 +34,7 @@ const Charts = (props) => {
   useEffect(() => {
     getChartData();
   }, []);
-  //turn this into a chart
-  console.log(chartData);
+
   const handleBack = (event) => {
     event.preventDefault();
     setState({ ...state, isChartPage: false, isExpandedView: false });
@@ -44,14 +43,12 @@ const Charts = (props) => {
   const oneMonthChart = chartData
     .map((data) => ({ date: data.x, rate: data.y }))
     .slice(0, 30);
-  console.log(oneMonthChart);
-
   const threeMonthChart = chartData
     .map((data) => ({ date: data.x, rate: data.y }))
     .slice(0, 90);
-  console.log(threeMonthChart);
   const dataMessageOne = <p>Data Represents a 30 Day Period</p>;
   const dataMessageTwo = <p>Data Represents a 90 Day Period</p>;
+
   const handleExpandedView = (event) => {
     setIsExpandedView(!isExpandedView);
   };
