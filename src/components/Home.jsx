@@ -10,12 +10,12 @@ import "./Home.scss";
 export default function Home(props) {
   const { state, setState } = props;
   return (
-    <div className="home">
+    <div id="home">
       <Header />
-      {state.isConverterPage ? (
-        <Converter state={state} setState={setState} />
-      ) : (
+      {!state.isConverterPage ? (
         <CurrencyExchange state={state} setState={setState} />
+      ) : (
+        <Converter state={state} setState={setState} />
       )}
     </div>
   );

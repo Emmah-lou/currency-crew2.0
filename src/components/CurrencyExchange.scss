@@ -1,0 +1,49 @@
+#currency-exchange {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  #base-rate-select {
+    border: 2px solid #000000e0;
+    border-radius: 5px;
+    padding: 1rem;
+    //margin: auto;
+    //width: 80%;
+  }
+  #base-rate-list {
+    //width: 80%;
+    display: flex;
+    //text-align: center;
+
+    //margin: auto;
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      //margin: auto;
+      //margin-top: 0.5rem;
+      border-radius: 0.5rem;
+      list-style-type: none;
+      padding: 0 !important;
+      button {
+        margin: auto;
+        height: 35px;
+      }
+      li {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        border: 2px solid #000000e0;
+        padding: 0.5rem;
+        margin: 0.4rem;
+        border-radius: 0.5rem;
+        //margin-right: 5px;
+        //margin-bottom: 5px;
+      }
+    }
+  }
+}
