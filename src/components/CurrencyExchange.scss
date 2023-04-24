@@ -1,0 +1,62 @@
+#currency-exchange {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  #base-rate-select {
+    font-size: 1.5rem;
+    border-radius: 5px;
+    padding: 1rem;
+    font-size: 2rem;
+    color: black;
+    //margin: auto;
+    //width: 80%;
+  }
+  #base-rate-list {
+    display: flex;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      border-radius: 0.5rem;
+      list-style-type: none;
+      padding: 0 !important;
+
+      button {
+        margin: auto;
+        height: 35px;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 150%;
+        border: 2px solid #08660fe0;
+        padding: 0.5rem;
+        margin: 0.4rem;
+        border-radius: 0.5rem;
+        height: 40px;
+        box-shadow: 0 0 10px rgba($color: #ffffff, $alpha: 0.7);
+
+        //background-color: #f5f5f5;
+
+        p {
+          margin: auto;
+          font-size: 1.25rem;
+          padding: 0.25rem;
+          font-weight: 500;
+          border: 1px solid #08660fe0;
+          border-radius: 5px;
+          background-color: #d1f1cb;
+          //box-shadow: rgb(0 0 0 / 10%) 0px 0px 5px 0px;
+        }
+      }
+    }
+  }
+}

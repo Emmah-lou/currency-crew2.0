@@ -1,4 +1,5 @@
 import React from "react";
+import "./Converter.scss";
 import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Charts } from "./Chart";
@@ -53,8 +54,8 @@ const Converter = (props) => {
             <h1>
               {state.baseCurrency} to {state.conversionCurrency}
             </h1>
+            <button onClick={doTheSwap}>swap</button>
             <form>
-              <button onClick={doTheSwap}>swap</button>
               <label htmlFor="amount">Enter Amount </label>
               <input
                 onChange={handleChange}
@@ -63,7 +64,7 @@ const Converter = (props) => {
                 value={state.amount}
               />
             </form>
-            <h1>{state.total}</h1>
+            <h2>{state.total}</h2>
             <button onClick={handleBack}>Back</button>
             <button onClick={() => setState({ ...state, isChartPage: true })}>
               Chart

@@ -8,6 +8,7 @@ import {
   CartesianGrid,
   Tooltip,
 } from "recharts";
+import "./Chart.scss";
 
 const Charts = (props) => {
   const { state, setState } = props;
@@ -34,8 +35,7 @@ const Charts = (props) => {
   useEffect(() => {
     getChartData();
   }, []);
-  //turn this into a chart
-  console.log(chartData);
+
   const handleBack = (event) => {
     event.preventDefault();
     setState({ ...state, isChartPage: false, isExpandedView: false });
@@ -44,14 +44,12 @@ const Charts = (props) => {
   const oneMonthChart = chartData
     .map((data) => ({ date: data.x, rate: data.y }))
     .slice(0, 30);
-  console.log(oneMonthChart);
-
   const threeMonthChart = chartData
     .map((data) => ({ date: data.x, rate: data.y }))
     .slice(0, 90);
-  console.log(threeMonthChart);
   const dataMessageOne = <p>Data Represents a 30 Day Period</p>;
   const dataMessageTwo = <p>Data Represents a 90 Day Period</p>;
+
   const handleExpandedView = (event) => {
     setIsExpandedView(!isExpandedView);
   };
@@ -62,14 +60,17 @@ const Charts = (props) => {
         <h3>
           Chart Data for - {state.baseCurrency}|{state.conversionCurrency}
         </h3>
-        <div>
+        <div id="mobile-view">
+          <h2>**Chart Data Only available in Desktop**</h2>
+        </div>
+        <div id="desktop-view">
           {isExpandedView ? (
             <MyThreeMonthChart data={threeMonthChart} />
           ) : (
             <MyChart data={oneMonthChart} />
           )}
+          {isExpandedView ? dataMessageTwo : dataMessageOne}
         </div>
-        {isExpandedView ? dataMessageTwo : dataMessageOne}
 
         <button onClick={handleBack}>Back to Converter</button>
         <button onClick={handleExpandedView}>Expanded Chart</button>

@@ -1,14 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
+
 body {
   background-color: #f5f5f5;
-  font-family: "Roboto", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
-  text-align: left;
+  color: black;
+  //text-align: left;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+button {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  //line-height: 1.5;
+  color: black;
+  //text-align: left;
+  margin: 0;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// // Define the button styles
+// $button-color: #000000;
+// $button-background: #d1f1cb;
+// $button-border: 1px solid #4caf50;
+// $button-border-radius: 4px;
+// $button-padding: 10px 20px;
+// $button-font-size: 16px;
+
+// // Define the hover styles
+// $button-hover-color: #fff;
+// $button-hover-background: #3e8e41;
+// $button-hover-border: 1px solid #3e8e41;
+
+// // Define the active styles
+// $button-active-color: #fff;
+// $button-active-background: #3e8e41;
+// $button-active-border: 1px solid #3e8e41;
+
+// // Define the focus styles
+// $button-focus-color: #fff;
+// $button-focus-background: #3e8e41;
+// $button-focus-border: 1px solid #3e8e41;
+// $button-focus-outline: none;
+
+// // Define the disabled styles
+// $button-disabled-opacity: 0.6;
+
+// // Define the button styles
+// button {
+//   display: inline-block;
+//   color: $button-color;
+//   background: $button-background;
+//   border: $button-border;
+//   border-radius: $button-border-radius;
+//   padding: $button-padding;
+//   font-size: $button-font-size;
+//   cursor: pointer;
+
+//   &:hover {
+//     color: $button-hover-color;
+//     background: $button-hover-background;
+//     border: $button-hover-border;
+//   }
+
+//   &:active {
+//     color: $button-active-color;
+//     background: $button-active-background;
+//     border: $button-active-border;
+//   }
+
+//   &:focus {
+//     color: $button-focus-color;
+//     background: $button-focus-background;
+//     border: $button-focus-border;
+//     outline: $button-focus-outline;
+//   }
+
+//   &:disabled {
+//     opacity: $button-disabled-opacity;
+//     cursor: not-allowed;
+//   }
+// }

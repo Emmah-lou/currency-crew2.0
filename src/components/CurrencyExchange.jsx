@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-
+import "./CurrencyExchange.scss";
 const CurrencyExchangeSelector = (props) => {
   const { state, setState } = props;
   const handleCurrencyChange = (event) => {
@@ -13,7 +12,7 @@ const CurrencyExchangeSelector = (props) => {
   }, [state.baseCurrency]);
 
   return (
-    <div id="base-rate">
+    <div id="base-rate-select">
       <form onChange={handleCurrencyChange}>
         <label htmlFor="baseCurrency">Base Rate - </label>
         <select name="baseCurrency">
@@ -70,8 +69,8 @@ const ExchangeList = (props) => {
   const baseRateListArray = Object.entries(state.rates);
 
   return (
-    <div className="home_baseRateList">
-      <ul className="rates-list">
+    <div id="base-rate-list">
+      <ul>
         {baseRateListArray.map((item) => {
           return (
             <ExchangeItem
@@ -94,12 +93,13 @@ const ExchangeItem = (props) => {
     event.preventDefault();
     setState({ ...state, conversionCurrency: currency, isConverterPage: true });
   };
+
   return (
     <li key={`${currency}`}>
       <button onClick={handleChange}>
         {state.baseCurrency} - {currency}
       </button>
-      <span> - {rate}</span>
+      <p>{rate.toFixed(5)}</p>
     </li>
   );
 };
