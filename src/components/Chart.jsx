@@ -8,6 +8,7 @@ import {
   CartesianGrid,
   Tooltip,
 } from "recharts";
+import "./Chart.scss";
 
 const Charts = (props) => {
   const { state, setState } = props;
@@ -59,14 +60,17 @@ const Charts = (props) => {
         <h3>
           Chart Data for - {state.baseCurrency}|{state.conversionCurrency}
         </h3>
-        <div>
+        <div id="mobile-view">
+          <h2>**Chart Data Only available in Desktop**</h2>
+        </div>
+        <div id="desktop-view">
           {isExpandedView ? (
             <MyThreeMonthChart data={threeMonthChart} />
           ) : (
             <MyChart data={oneMonthChart} />
           )}
+          {isExpandedView ? dataMessageTwo : dataMessageOne}
         </div>
-        {isExpandedView ? dataMessageTwo : dataMessageOne}
 
         <button onClick={handleBack}>Back to Converter</button>
         <button onClick={handleExpandedView}>Expanded Chart</button>

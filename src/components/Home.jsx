@@ -5,6 +5,7 @@ import { Converter } from "./Converter";
 import { Link } from "react-router-dom";
 import { Charts } from "./Chart";
 import { Header } from "./Header";
+import { Footer } from "./Footer";
 import "./Home.scss";
 
 export default function Home(props) {
@@ -17,6 +18,7 @@ export default function Home(props) {
       ) : (
         <Converter state={state} setState={setState} />
       )}
+      <Footer />
     </div>
   );
 }
